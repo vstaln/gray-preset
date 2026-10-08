@@ -1,15 +1,13 @@
 //! gray-preset — named working-preference bundles.
 //!
-//! Port of pi's `preset` extension. Pi presets were JSON config
-//! (model/tools/thinking/instructions) applied through host APIs; gray
-//! sidecars can't retune the model, so a preset here is a markdown file of
-//! working preferences at `~/.gray/presets/<name>.md`. `/preset use <name>`
-//! returns `{prompt}` so the harness applies it as a real instruction turn.
+//! A preset is a markdown file of working preferences at
+//! `~/.gray/presets/<name>.md`. `/preset use <name>` returns `{prompt}` so
+//! the harness applies it as a real instruction turn.
 //!
 //! Bare `/preset` is interactive when the host grants `host.ask`: a "Use
-//! which preset?" picker lists every preset (first line as the description)
-//! plus "none"; picking one returns the same `{prompt}` as `/preset use`.
-//! With no ask channel it falls back to the text list.
+//! which preset?" picker lists every preset plus "none"; picking one
+//! returns the same `{prompt}` as `/preset use`. With no ask channel it
+//! falls back to the text list.
 
 use std::collections::HashMap;
 use std::io::{BufRead, Write};

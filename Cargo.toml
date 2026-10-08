@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 rust-version = "1.91"
 license = "MIT"
-description = "Named working-preference bundles (/preset list|use|new). Port of pi's preset extension."
+description = "Named session presets and working-preference bundles"
 
 [[bin]]
 name = "gray-preset"
