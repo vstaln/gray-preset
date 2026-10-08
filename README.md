@@ -5,7 +5,11 @@ extension.
 
 ## Commands
 
-- `/preset` or `/preset list` — list presets
+- `/preset` — with the `host.ask` capability granted, opens a "Use which
+  preset?" picker (each preset with its first line as the description, plus
+  "none"); picking one applies it exactly like `/preset use <name>`. With no
+  ask channel it falls back to the list.
+- `/preset list` — list presets
 - `/preset use <name>` — returns `{prompt}`, so the harness applies the
   preset's contents as a real instruction turn for the rest of the session
 - `/preset new <name>` — creates an empty preset file and tells you the path
@@ -25,13 +29,15 @@ wire, so this port applies the *instructions* half via `command/run`'s
 
 ## Wire methods
 
-`plugin/manifest`, `command/run`, `plugin/shutdown`. Protocol 1.1. No tools,
-no capabilities, no host→sidecar requests.
+`plugin/manifest`, `command/run`, `plugin/shutdown`, plus sidecar→host
+`host/ask` for the bare `/preset` picker. Protocol 1.1. No tools. Capability:
+`host.ask` (the command degrades to the text list without it).
 
 ## Install
 
 ```sh
 gray plugin install preset
+gray plugin capabilities preset --all   # grants host.ask → bare /preset picker
 ```
 
 ## Develop
