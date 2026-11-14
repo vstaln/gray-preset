@@ -23,7 +23,7 @@ fn manifest() -> Value {
         "version": env!("CARGO_PKG_VERSION"),
         "protocol": "1.1",
         "tools": [],
-        "description": "named",
+        "description": "named session presets and preferences",
         "commands": ["/preset"],
         "capabilities": ["host.ask"],
     })
