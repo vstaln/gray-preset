@@ -23,6 +23,7 @@ fn manifest() -> Value {
         "version": env!("CARGO_PKG_VERSION"),
         "protocol": "1.1",
         "tools": [],
+        "description": "named",
         "commands": ["/preset"],
         "capabilities": ["host.ask"],
     })
