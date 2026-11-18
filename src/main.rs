@@ -25,6 +25,7 @@ fn manifest() -> Value {
         "tools": [],
         "description": "named session presets and preferences",
         "commands": ["/preset"],
+        "command_descriptions": {"/preset": "apply a named working-preference preset"},
         "capabilities": ["host.ask"],
     })
 }
