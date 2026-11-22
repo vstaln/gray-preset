@@ -184,7 +184,7 @@ fn run_command(argv: &[&str], ask: &mut Ask) -> Value {
             }));
             let label = picked_label(picked.as_ref(), Q_PRESET).unwrap_or_default();
             // A real preset named "none" still wins over the sentinel label.
-            if names.iter().any(|n| *n == label) {
+            if names.contains(&label) {
                 use_preset(&label)
             } else {
                 list_result()
